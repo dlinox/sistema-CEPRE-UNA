@@ -2,7 +2,6 @@
     <div class="container">
         <table class="table table-bordered ">
             <thead>
-
                 <tr class="bg-secondary text-light text-center">
                   <th scope="col">Hora</th>
                     <th scope="col" v-for="(item, index) in dias" :key="index">{{item}}</th>
@@ -49,15 +48,12 @@ export default {
    
   }),
   async created(){
-
     this._horario = [];
     this._horas = [];
     this._horario = this.horario
     this._horas = this.turno_horas
     await this.GenerarHorarioEs();
-
   },
-
   methods:{
     GenerarHorarioEs(){
       this._horario.forEach(item => {
