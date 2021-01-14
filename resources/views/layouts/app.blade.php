@@ -11,6 +11,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
         body {
@@ -58,8 +59,19 @@
         }
 
         .sidebar .nav-link {
-            font-weight: 500;
+            font-weight: 600;
+            letter-spacing: 1px;
+
+            margin-bottom: 1px;
             color: #333;
+        }
+
+
+        .sidebar .nav-link:hover {
+            font-weight: 600;
+            background: rgba(55, 55, 55, .06);
+   
+            color: #222;
         }
 
         .sidebar .nav-link .feather {
@@ -136,26 +148,27 @@
                     <div class="sidebar-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">
-                                    <span data-feather="home"></span>
+                                <a class="nav-link" href="#" id="">
+                             
                                     Dashboard <span class="sr-only">(current)</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/docente/perfil">
-                                    <span data-feather="file"></span>
+                                <a class="nav-link" href="/docente/perfil" id="perfil">
+                                    <i class="bi-person feather"></i>
                                     Perfil
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/docente/cursos">
-                                    <span data-feather="shopping-cart"></span>
+                                <a class="nav-link" href="/docente/cursos" id="cursos">
+                                <i class="bi-wallet2 feather"></i>
+                                   
                                     Cursos
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/docente/horario">
-                                    <span data-feather="users"></span>
+                                <a class="nav-link" href="/docente/horario" id="horario">
+                                <i class="bi-calendar3-week feather"></i>
                                     Horarios
                                 </a>
                             </li>
@@ -163,7 +176,7 @@
                         </ul>
                     </div>
                 </nav>
-                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 pt-3">
                     @yield('content')
                 </main>
             </div>
@@ -171,5 +184,12 @@
     </div>
     <script src="{{asset('js/app.js')}}"></script>
 </body>
-
 </html>
+
+<script>
+    var path = window.location.pathname
+    var URLactual = path.lastIndexOf('/') +1; 
+    var actualPage = path.substring(URLactual, path.length)
+    var elemento = document.getElementById(actualPage);
+    elemento.classList.add("active");
+</script>
