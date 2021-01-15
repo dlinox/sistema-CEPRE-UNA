@@ -10,6 +10,8 @@ Vue.component('docente-component', require('./components/DocenteComponent.vue').
 
 Vue.component('cursos-component', require('./components/CursosComponent.vue').default);
 
+Vue.component('perfil-component', require('./components/PerfilComponent.vue').default);
+
 const app = new Vue({
     el: '#app',
 });
