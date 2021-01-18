@@ -216,10 +216,7 @@
           </div>
         </nav>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-          <perfil-component></perfil-component>
-          <estudiante-component></estudiante-component>
-          <hr>
-          <docente-component></docente-component>
+          <a href="http://localhost:8000/docente/perfil"> <button class="btn btn-primary mt-4">IR MODULO DOCENTE</button></a>
         </main>
       </div>
     </div>

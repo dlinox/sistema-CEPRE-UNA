@@ -2491,14 +2491,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
+//
+//
 //
 //
 //
@@ -2567,54 +2561,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['horario', 'turno_horas'],
   data: function data() {
     return {
-      dias: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes'],
-      _horario: [],
-      _horas: []
+      perfilDocente: [{
+        nombre: 'Yohel Ronaldo',
+        apellidos: 'Quispe Arratia',
+        fotoDocente: 'https://blog.photofeeler.com/wp-content/uploads/2017/12/linkedin-profile-picture.jpg',
+        tipo_Documento: 'DNI',
+        numero_DNI: '70757838',
+        condicion: 'particular',
+        telefono: '051-13421',
+        profesion: 'Licenciatura en Físico Matemáticas',
+        direccion: 'Av. Las Palmas #1023',
+        codDocente: 'Doc-392712',
+        usuarioDocente: 'Ronaldo20',
+        correo: 'Yohel.Ronaldo@gmail.com',
+        celular: '965672354'
+      }]
     };
-  },
-  created: function created() {
-    var _this = this;
-
-    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              _this._horario = [];
-              _this._horas = [];
-              _this._horario = _this.horario;
-              _this._horas = _this.turno_horas;
-              _context.next = 6;
-              return _this.GenerarHorarioEs();
-
-            case 6:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee);
-    }))();
-  },
-  methods: {
-    GenerarHorarioEs: function GenerarHorarioEs() {
-      var _this2 = this;
-
-      this._horario.forEach(function (item) {
-        _this2._horas.forEach(function (element) {
-          if (item.hora_ini === element.hora_ini && item.hora_fin === element.hora_fin) {
-            element.data.push({
-              dia: item.dia,
-              curso: item.curso,
-              docente: item.docente,
-              grupo: item.grupo
-            });
-          }
-        });
-      });
-    }
   }
 });
 
@@ -39409,15 +39373,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container rounded bg-white mt-5 mb-5" }, [
-      _c("div", { staticClass: "row" }, [
+  return _c(
+    "div",
+    { staticClass: "container rounded bg-white mt-5 mb-5" },
+    _vm._l(_vm.perfilDocente, function(docente) {
+      return _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-md-3 border-right" }, [
           _c(
             "div",
@@ -39428,126 +39388,86 @@ var staticRenderFns = [
             [
               _c("img", {
                 staticClass: "rounded-circle mt-5",
-                attrs: {
-                  src:
-                    "https://blog.photofeeler.com/wp-content/uploads/2017/12/linkedin-profile-picture.jpg",
-                  width: "150",
-                  height: "150"
-                }
+                attrs: { src: docente.fotoDocente, width: "150", height: "150" }
               }),
               _vm._v(" "),
               _c("span", { staticClass: "font-weight-bold" }, [
-                _vm._v("Ronaldo20")
+                _vm._v(_vm._s(docente.nombre))
               ]),
               _vm._v(" "),
               _c("span", { staticClass: "text-black-50" }, [
-                _vm._v("Yohel.Ronaldo@gmail.com")
+                _vm._v(_vm._s(docente.correo))
               ]),
               _vm._v(" "),
-              _c("span", [_vm._v("965 672 342")])
+              _c("span", [_vm._v(_vm._s(docente.celular))])
             ]
           )
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "col-md-5 border-right" }, [
           _c("div", { staticClass: "p-3 py-5" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "d-flex justify-content-between align-items-center mb-3"
-              },
-              [
-                _c("h6", { staticClass: "text-right font-weight-bold" }, [
-                  _vm._v("Perfil de docente")
-                ])
-              ]
-            ),
+            _vm._m(0, true),
             _vm._v(" "),
             _c("div", { staticClass: "row mt-3" }, [
-              _c("div", { staticClass: "col-md-12" }, [
-                _c("label", { staticClass: "labels font-weight-bold" }, [
-                  _vm._v("Nombre:")
-                ])
-              ]),
+              _vm._m(1, true),
               _vm._v(" "),
               _c("div", { staticClass: "col-md-12" }, [
                 _c("label", { staticClass: "labels" }, [
-                  _vm._v("Lic. Yohel Ronaldo ")
+                  _vm._v("Lic. " + _vm._s(docente.nombre) + " ")
                 ]),
                 _vm._v(" "),
-                _c("label", [_vm._v(" Quispe Arratia")])
+                _c("label", [_vm._v(" " + _vm._s(docente.apellidos))])
               ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "row mt-3" }, [
+              _vm._m(2, true),
+              _vm._v(" "),
+              _vm._m(3, true),
+              _vm._v(" "),
               _c("div", { staticClass: "col-md-6" }, [
-                _c("label", { staticClass: "labels font-weight-bold" }, [
-                  _vm._v("Tipo de documento: ")
+                _c("label", { staticClass: "labels" }, [
+                  _vm._v(_vm._s(docente.tipo_Documento) + " ")
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._m(4, true)
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row mt-3" }, [
+              _vm._m(5, true),
+              _vm._v(" "),
+              _vm._m(6, true),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-6" }, [
+                _c("label", { staticClass: "labels" }, [
+                  _vm._v(_vm._s(docente.condicion))
                 ])
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-md-6" }, [
-                _c("label", { staticClass: "labels font-weight-bold" }, [
-                  _vm._v("Numero:")
+                _c("label", { staticClass: "labels" }, [
+                  _vm._v(_vm._s(docente.telefono))
                 ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("label", { staticClass: "labels" }, [_vm._v("DNI ")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("label", { staticClass: "labels" }, [_vm._v("70757838")])
               ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "row mt-3" }, [
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("label", { staticClass: "labels font-weight-bold" }, [
-                  _vm._v("Condición:")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("label", { staticClass: "labels font-weight-bold" }, [
-                  _vm._v("Telefono:")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("label", { staticClass: "labels" }, [_vm._v("Particular:")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("label", { staticClass: "labels" }, [_vm._v("051-34221")])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row mt-3" }, [
-              _c("div", { staticClass: "col-md-12" }, [
-                _c("label", { staticClass: "labels font-weight-bold" }, [
-                  _vm._v("Profesión: ")
-                ])
-              ]),
+              _vm._m(7, true),
               _vm._v(" "),
               _c("div", { staticClass: "col-md-12" }, [
                 _c("label", { staticClass: "labels" }, [
-                  _vm._v("Licenciatura en Físico Matemáticas")
+                  _vm._v(_vm._s(docente.profesion))
                 ])
               ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "row mt-3 mb-2" }, [
-              _c("div", { staticClass: "col-md-12" }, [
-                _c("label", { staticClass: "labels font-weight-bold" }, [
-                  _vm._v("Dirección: ")
-                ])
-              ]),
+              _vm._m(8, true),
               _vm._v(" "),
               _c("div", { staticClass: "col-md-12" }, [
                 _c("label", { staticClass: "labels" }, [
-                  _vm._v("Av. Las palmas #1024")
+                  _vm._v(_vm._s(docente.dirección))
                 ])
               ])
             ])
@@ -39556,18 +39476,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("div", { staticClass: "col-md-4" }, [
           _c("div", { staticClass: "p-3 py-5" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "d-flex justify-content-between align-items-center experience"
-              },
-              [
-                _c("span", { staticClass: "font-weight-bold" }, [
-                  _vm._v("Datos Unap")
-                ])
-              ]
-            ),
+            _vm._m(9, true),
             _vm._v(" "),
             _c("div", { staticClass: "d-flex flex-row mt-3 exp-container" }, [
               _c("img", {
@@ -39588,7 +39497,7 @@ var staticRenderFns = [
                   _c("span", { staticClass: "labels font-weight-bold" }, [
                     _vm._v("Cod Docente: ")
                   ]),
-                  _vm._v("Doc-392812")
+                  _vm._v(_vm._s(docente.codDocente))
                 ]),
                 _vm._v(" "),
                 _c("span", { staticClass: "d-block text-black-50 labels" }, [
@@ -39601,7 +39510,115 @@ var staticRenderFns = [
           ])
         ])
       ])
+    }),
+    0
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "d-flex justify-content-between align-items-center mb-3" },
+      [
+        _c("h6", { staticClass: "text-right font-weight-bold" }, [
+          _vm._v("Perfil de docente")
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-12" }, [
+      _c("label", { staticClass: "labels font-weight-bold" }, [
+        _vm._v("Nombre:")
+      ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-6" }, [
+      _c("label", { staticClass: "labels font-weight-bold" }, [
+        _vm._v("Tipo de documento: ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-6" }, [
+      _c("label", { staticClass: "labels font-weight-bold" }, [
+        _vm._v("Numero:")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-6" }, [
+      _c("label", { staticClass: "labels" }, [_vm._v("70757838")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-6" }, [
+      _c("label", { staticClass: "labels font-weight-bold" }, [
+        _vm._v("Condición:")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-6" }, [
+      _c("label", { staticClass: "labels font-weight-bold" }, [
+        _vm._v("Telefono:")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-12" }, [
+      _c("label", { staticClass: "labels font-weight-bold" }, [
+        _vm._v("Profesión: ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-12" }, [
+      _c("label", { staticClass: "labels font-weight-bold" }, [
+        _vm._v("Dirección: ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "d-flex justify-content-between align-items-center experience"
+      },
+      [_c("span", { staticClass: "font-weight-bold" }, [_vm._v("Datos Unap")])]
+    )
   }
 ]
 render._withStripped = true
